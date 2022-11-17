@@ -7,6 +7,10 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
     filename: 'index-bundle.js',
   },
+  experiments: {
+    asset: true
+  },
+
   module: {
     rules: [
       {
@@ -20,6 +24,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
+        type: 'asset/resource',
         type: 'asset',
         use: 'svgo-loader'
       },
